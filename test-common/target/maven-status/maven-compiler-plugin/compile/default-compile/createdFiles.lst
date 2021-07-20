@@ -1,0 +1,6 @@
+cn\hsmxg1204\common\service\vilad\PasswordValidator.class
+cn\hsmxg1204\common\service\vilad\EmailValidator.class
+cn\hsmxg1204\common\service\vilad\UserNameValidator.class
+cn\hsmxg1204\common\service\Validator.class
+cn\hsmxg1204\common\entity\UserInfo.class
+cn\hsmxg1204\common\service\vilad\Validators.class

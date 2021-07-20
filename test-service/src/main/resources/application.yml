@@ -1,0 +1,66 @@
+server:
+  port: 8889
+  servlet:
+    context-path: /my-app
+    session:
+      timeout: 10m
+spring:
+  application:
+    name: hello-world-main-application
+  datasource-master:
+    url: jdbc:mysql://47.100.78.168:3306/test-sql?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: hsmxg
+    password: hsmxg1204.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  datasource-slave:
+    url: jdbc:mysql://47.100.78.168:3306/hjzdatabase?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: hsmxg
+    password: hsmxg1204.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.200.104:8848
+  cache:
+    type: redis
+  redis:
+    database: 0
+    host: 47.100.78.168
+    password: hsmxg1204
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8 # 连接池中的最大空闲连接
+        min-idle: 0 # 连接池中的最小空闲连接
+        max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1 # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    timeout: 12000 # 连接超时时间（毫秒）
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰转换
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    cn.hsmxg1204.test.mapper: debug
+    cn.hsmxg1204.test.controller: info
+    cn.hsmxg1204.test.service: info
+#    max-history: 7
+#    max-size: 10MB
+  config: classpath:springboot_learn_logback.xml
+#    name: E:/SpringBootLearing/test_logs/login.log
+
+wechat:
+  app-id: 11111
+  app-secret: 11111
+
+jwt:
+  hmac:
+    secretKey: 'HSMXG1204llllllll0000123'
+  exp:
+    seed:
+      min: 360000
+      max: 8640000
+  issuer: 'hsmxxg'
+  access:
+    uris: /index,/actuator/*
