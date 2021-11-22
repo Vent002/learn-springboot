@@ -5,9 +5,7 @@ import cn.hsmxg1204.core.exception.MyException;
 import cn.hsmxg1204.test.config.dbconfig.RoutingDataSourceContext;
 import cn.hsmxg1204.test.config.dbconfig.RoutingWithSlave;
 import cn.hsmxg1204.test.constant.UserSession;
-import cn.hsmxg1204.test.dao.UserDao;
 import cn.hsmxg1204.test.entity.reqs.UserInfoDTO;
-import cn.hsmxg1204.test.service.IUserService;
 import cn.hsmxg1204.test.entity.UserInfo;
 import cn.hsmxg1204.test.service.impl.BaseService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -97,6 +95,8 @@ public class UserController extends BaseService {
     @RoutingWithSlave
     public UserInfo profile(){
         log.info("database: {}",RoutingDataSourceContext.getDataSourceKey());
+//        UserDao userDao = (UserDao) ProxyUtils.doCheckForDao(UserDao.class).create();
+//        userDao.getUserByEmail("hsmxg1204@qq.com");
         UserInfo user = userService.getUserByEmail("hsmxg1204@qq.com");
         if(user == null){
             throw new MyException("please sign in");

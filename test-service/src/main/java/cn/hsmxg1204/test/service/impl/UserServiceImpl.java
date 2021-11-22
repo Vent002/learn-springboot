@@ -41,7 +41,7 @@ public class UserServiceImpl implements IUserService {
             userInfo = iUserMapper.selectUserByNameAndPwd(userName,password);
         }else {
             userInfo = iUserMapper.selectUserByName(userName);
-            if(!new BCryptPasswordEncoder().matches(password,userInfo.getPassword())){
+            if(userInfo != null && !new BCryptPasswordEncoder().matches(password,userInfo.getPassword())){
                 throw new MyException("密码不正确");
             }
         }

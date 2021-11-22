@@ -42,7 +42,7 @@ public class UserSecurityInterceptor implements HandlerInterceptor {
     static{
         pageList.add("/login/user");
         pageList.add("/error");
-        pageList.add("static/");
+        pageList.add("/static/");
         pageList.add("/webjars/*");
         pageList.add("/swagger");
         pageList.add("/test/");

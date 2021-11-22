@@ -1,15 +1,17 @@
 spring:
   application:
     name: test-spring
+  profiles:
+    active: dev
   cloud:
     nacos:
-      server-addr: 192.168.200.104:8848
       config:
         file-extension: yml
         group: DEFAULT_GROUP
+        name: test
+        server-addr: 127.0.0.1:8848
       discovery:
-        server-addr: 192.168.200.104:8848
-  profiles:
-    active: dev
+        server-addr: 127.0.0.1:8848
+
   # main:
     #allow-bean-definition-overriding: false # 允许存在个多Feign

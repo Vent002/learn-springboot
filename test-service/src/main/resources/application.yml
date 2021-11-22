@@ -4,29 +4,34 @@ server:
     context-path: /my-app
     session:
       timeout: 10m
+jasypt:
+  encryptor:
+    password: hsmxg
 spring:
   application:
     name: hello-world-main-application
   datasource-master:
-    url: jdbc:mysql://47.100.78.168:3306/test-sql?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    username: hsmxg
-    password: hsmxg1204.
+    #url: jdbc:mysql://47.100.78.168:3306/test-sql?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: ENC(byouNxe4ctvYdmMUKO71TWW2x5NJo9HEfB+h+BXvviZXSlsBIX/+6cFy9E0T2TFHav9RHU2GK+XtCqHxUtcBAh7A2gI9nHwqTTgVLcY+vvhti/5gCjhHeOJwCHOtkqEmuF/vS9vbdvOlAG7wIx3kXEb79F5KvYdD)
+    username: ENC(+5PVdwPSH240lXBjAbb2Nw==)
+    password: ENC(sw5YmC4x1csQg5HjpvmIL3ADdeqVo2TE)
     driver-class-name: com.mysql.cj.jdbc.Driver
   datasource-slave:
-    url: jdbc:mysql://47.100.78.168:3306/hjzdatabase?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    username: hsmxg
-    password: hsmxg1204.
+    url: ENC(byouNxe4ctvYdmMUKO71TWW2x5NJo9HEfB+h+BXvviZXSlsBIX/+6cFy9E0T2TFHav9RHU2GK+XtCqHxUtcBAh7A2gI9nHwqTTgVLcY+vvhti/5gCjhHeOJwCHOtkqEmuF/vS9vbdvOlAG7wIx3kXEb79F5KvYdD)
+    username: ENC(+5PVdwPSH240lXBjAbb2Nw==)
+    password: ENC(Cx9jtwNS50Wb3Va5PfM07bJddoa0+xDK)
+#    password: 123123,.
     driver-class-name: com.mysql.cj.jdbc.Driver
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.200.104:8848
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.200.104:8848
   cache:
     type: redis
   redis:
     database: 0
-    host: 47.100.78.168
-    password: hsmxg1204
+    host: ENC(GFWRk0RpZOIgINeXrrfW438no8oUEvaG)
+    password: ENC(NFwAMjZzgOvQ/Fn5uPwg42che8+7JI6x)
     port: 6379
     jedis:
       pool:
