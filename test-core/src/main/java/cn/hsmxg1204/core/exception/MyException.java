@@ -25,13 +25,11 @@ public class MyException extends RuntimeException{
 
     public MyException(String message){
         super(message);
-        System.out.println("异常信息："+message);
     }
 
     public MyException(String code,String message){
         super(message);
         this.code = code;
-        System.out.println("异常信息：code="+code+"--message="+message);
     }
     public MyException(Throwable cause){
         super(cause);

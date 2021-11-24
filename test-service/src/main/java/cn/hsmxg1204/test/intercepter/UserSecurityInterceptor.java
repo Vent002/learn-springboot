@@ -51,7 +51,7 @@ public class UserSecurityInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = String.valueOf(request.getRequestURI());
-        System.out.println("请求地址:\t"+url);
+        System.out.println("请求地址=====>:\t"+url);
         if(HttpMethod.OPTIONS.toString().equals(request.getMethod())){
             response.setHeader("Access-Control-Allow-Origin", "*");
             response.setHeader("Access-Control-Allow-Credentials", "true");
