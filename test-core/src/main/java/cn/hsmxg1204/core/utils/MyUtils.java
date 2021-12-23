@@ -8,6 +8,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
+import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -247,5 +248,19 @@ public class MyUtils {
             throw new MyException("属性复制失败");
         }
         return result;
+    }
+
+    private static SecureRandom random = new SecureRandom();
+
+    /**
+     * 获取6 位随机验证码
+     * @return string
+     */
+    public static String getCode(){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            sb.append(random.nextInt(10));
+        }
+        return sb.toString();
     }
 }
